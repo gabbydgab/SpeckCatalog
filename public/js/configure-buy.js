@@ -134,22 +134,22 @@ function getParent(el, selector)
 
 function getProductUoms(productId)
 {
-    var url  = '/partial/uoms'
-    var data = { 'product_id' : productId }
+    var url  = '/partial/uoms';
+    var data = { 'product_id' : productId };
 
     $.post(url, data, function(html) {
         return html;
-    }
+    });
 }
 
 function getOptions(productId, depth)
 {
-    var url  = '/partial/options'
-    var data = { 'product_id' : productId, 'depth' : depth }
+    var url  = '/partial/options';
+    var data = { 'product_id' : productId, 'depth' : depth };
 
     $.post(url, data, function(html) {
         return html;
-    }
+    });
 }
 
 $(document).ready(function(){
