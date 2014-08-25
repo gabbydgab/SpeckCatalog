@@ -1,5 +1,5 @@
 </div>
-<?
+<?php
 $this->headLink()
     ->prependStylesheet($this->basePath() . '/css/ui-lightness.css')
     ->prependStylesheet($this->basePath() . '/css/speck-catalog.css');
@@ -8,6 +8,6 @@ $this->headScript()
     ->prependFile($this->basePath() . '/js/speck-catalog-manager.js')
     ->prependFile($this->basePath() . '/js/bootstrap-modal.js', 'text/javascript')
     ->prependFile($this->basePath() . '/js/bootstrap-tab.js', 'text/javascript')
-    ->prependFile($this->basePath() . '/js/jquery-ui-1.8.18.js', 'text/javascript')
+    ->prependFile($this->basePath() . '/js/jquery-ui-1.8.18.js', 'text/javascript');
 ?>
 <?php echo $this->content; ?>
