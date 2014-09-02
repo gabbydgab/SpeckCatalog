@@ -11,14 +11,14 @@
     "authors": [
         {
             "name": "Nigel Lundsten",
-            "email": "nigel.lundsten@gmail.com",
-            "homepage": ""
+            "email": "nigel.lundsten@gmail.com"
         }
     ],
     "require": {
         "speckcommerce/speck-contact": "dev-master",
         "speckcommerce/speck-cart": "dev-master",
-        "speckcommerce/speck-multisite": "dev-master"
+        "speckcommerce/speck-multisite": "dev-master",
+        "speckcommerce/speck-random-products": "dev-master"
     },
     "require-dev": {
         "mockery/mockery": ">=0.7.2"
