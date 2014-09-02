@@ -1,18 +1,18 @@
 <form id="image-" class="live-form">
 
-    <div class="form-messages"><?= $this->formErrors; ?></div>
-    <input type="hidden" name="parent_id" value="<?=$image->getParentId();?>"/>
+    <div class="form-messages"><?php echo  $this->formErrors; ?></div>
+    <input type="hidden" name="parent_id" value="<?php echo $image->getParentId();?>"/>
     <div class="row">
         <div class="span1">
-        <img class="img hover_fullsize" src="<?=$this->speckCatalogImage()->product($image);?>"/>
+        <img class="img hover_fullsize" src="<?php echo $this->speckCatalogImage()->product($image);?>"/>
         </div>
         <div class="span3">
             <span class="smallcaps">label</span><br/>
-            <input name="label" class="span3" type="text" value="<?=$image->getLabel();?>"/>
+            <input name="label" class="span3" type="text" value="<?php echo $image->getLabel();?>"/>
         </div>
         <div class="span3">
             <span class="smallcaps">filename</span><br/>
-            <input name="file_name" class="span3" type="text" value="<?=$image->getFilename();?>"/>
+            <input name="file_name" class="span3" type="text" value="<?php echo $image->getFilename();?>"/>
         </div>
     </div>
 

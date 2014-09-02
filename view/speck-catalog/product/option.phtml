@@ -1,15 +1,15 @@
-<? $pdir = '/speck-catalog/product/option/'; ?>
-<? if($option->has('choices')): ?>
+<?php $pdir = '/speck-catalog/product/option/'; ?>
+<?php if($option->has('choices')): ?>
     <div class="option" style="margin-left:25px; border:1px solid #ddd; margin-bottom:5px; margin-right:25px; padding:10px">
-        <strong><?=$option; ?><?=($option->getRequired() ? '*' : ''); ?>:</strong><br/>
-        <? if ($option->has('instruction')):?>&nbsp;&nbsp;&nbsp;(<?=$option->getInstruction();?>)<br/><? endif; ?>
-        <? $listType = $option->getOptionTypeId(); ?>
-        <? if ('1' === $listType): ?>
-            <?=$this->partial($pdir . 'select.phtml', array('option' => $option)); ?>
-        <? elseif ('2' === $listType): ?>
-            <?=$this->partial($pdir . 'radio.phtml', array('option' => $option)); ?>
-        <? elseif ('3' === $listType): ?>
-            <?=$this->partial($pdir . 'checkbox.phtml', array('option' => $option)); ?>
-        <? endif; ?>
+        <strong><?php echo $option; ?><?php echo ($option->getRequired() ? '*' : ''); ?>:</strong><br/>
+        <?php if ($option->has('instruction')):?>&nbsp;&nbsp;&nbsp;(<?php echo $option->getInstruction();?>)<br/><?php endif; ?>
+        <?php $listType = $option->getOptionTypeId(); ?>
+        <?php if ('1' === $listType): ?>
+            <?php echo $this->partial($pdir . 'select.phtml', array('option' => $option)); ?>
+        <?php elseif ('2' === $listType): ?>
+            <?php echo $this->partial($pdir . 'radio.phtml', array('option' => $option)); ?>
+        <?php elseif ('3' === $listType): ?>
+            <?php echo $this->partial($pdir . 'checkbox.phtml', array('option' => $option)); ?>
+        <?php endif; ?>
     </div>
-<? endif; ?>
+<?php endif; ?>

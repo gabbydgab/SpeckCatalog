@@ -1,5 +1,5 @@
-<?=$this->form()->openTag($removeForm);?>
-<? foreach ($removeForm->getElements() as $element) : ?>
-    <?=$this->formInput($element); ?>
-<? endforeach; ?>
+<?php echo $this->form()->openTag($removeForm);?>
+<?php foreach ($removeForm->getElements() as $element) : ?>
+    <?php echo $this->formInput($element); ?>
+<?php endforeach; ?>
 </form>

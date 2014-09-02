@@ -1,15 +1,15 @@
-<?=$this->form()->openTag($form);?>
-    <div class="form-messages"><?= $this->formErrors; ?></div>
-    <?= $this->originalFields; ?>
-    <?= $this->formRow($form->get('document_id')); ?>
-    <?= $this->formRow($form->get('product_id')); ?>
+<?php echo $this->form()->openTag($form);?>
+    <div class="form-messages"><?php echo  $this->formErrors; ?></div>
+    <?php echo  $this->originalFields; ?>
+    <?php echo  $this->formRow($form->get('document_id')); ?>
+    <?php echo  $this->formRow($form->get('product_id')); ?>
 
     <div class="row">
         <div class="span3">
-            <?= $this->speckCatalogManagerFormRow($form->get('label')->setAttribute('class', 'span3')); ?>
+            <?php echo  $this->speckCatalogManagerFormRow($form->get('label')->setAttribute('class', 'span3')); ?>
         </div>
         <div class="span3">
-            <?= $this->speckCatalogManagerFormRow($form->get('file_name')->setAttribute('class', 'span3')); ?>
+            <?php echo  $this->speckCatalogManagerFormRow($form->get('file_name')->setAttribute('class', 'span3')); ?>
         </div>
     </div>
 

@@ -1,25 +1,25 @@
-<?= $this->form()->openTag($form); ?>
+<?php echo  $this->form()->openTag($form); ?>
 
-    <div class="form-messages"><?= $this->formErrors; ?></div>
-    <?= $this->originalFields; ?>
-    <?= $this->formInput($form->get('product_id')); ?>
-    <?= $this->formInput($form->get('uom_code')); ?>
-    <?= $this->formInput($form->get('quantity')); ?>
+    <div class="form-messages"><?php echo  $this->formErrors; ?></div>
+    <?php echo  $this->originalFields; ?>
+    <?php echo  $this->formInput($form->get('product_id')); ?>
+    <?php echo  $this->formInput($form->get('uom_code')); ?>
+    <?php echo  $this->formInput($form->get('quantity')); ?>
 
     <div class="row">
         <div class="span5">
             <div class="row">
                 <div class="span2">
-                    <?=$this->speckCatalogManagerFormRow($form->get('distributor_id')->setAttribute('class', 'span2')); ?>
+                    <?php echo $this->speckCatalogManagerFormRow($form->get('distributor_id')->setAttribute('class', 'span2')); ?>
                 </div>
                 <div class="span1">
-                    <?=$this->speckCatalogManagerFormRow($form->get('distributor_uom_code')->setAttribute('class', 'span1')); ?>
+                    <?php echo $this->speckCatalogManagerFormRow($form->get('distributor_uom_code')->setAttribute('class', 'span1')); ?>
                 </div>
                 <div class="span1">
-                    <?=$this->speckCatalogManagerFormRow($form->get('distributor_item_number')->setAttribute('class', 'span1')); ?>
+                    <?php echo $this->speckCatalogManagerFormRow($form->get('distributor_item_number')->setAttribute('class', 'span1')); ?>
                 </div>
                 <div class="span1">
-                    <?=$this->speckCatalogManagerFormRow($form->get('cost')->setAttribute('class', 'span1')); ?>
+                    <?php echo $this->speckCatalogManagerFormRow($form->get('cost')->setAttribute('class', 'span1')); ?>
                 </div>
             </div>
         </div>

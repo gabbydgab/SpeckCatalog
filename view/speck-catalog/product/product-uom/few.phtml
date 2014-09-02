@@ -1,4 +1,4 @@
-<?
+<?php
 function uomForKey($uoms, $key) {
     $key = explode(':', $key);
     foreach($uoms as $uom) {
@@ -13,24 +13,24 @@ function uomForKey($uoms, $key) {
 ?>
 
 <div style="row" class="span12">
-    <? foreach($form->get('uom')->getValueOptions() as $val => $label): ?>
+    <?php foreach($form->get('uom')->getValueOptions() as $val => $label): ?>
         <div class="product-uom-wrap span2 well">
             <label>
-                <? $uom = uomForKey($uoms, $val); ?>
-                <input class="select-product-uom" type="radio" name="uom" value="<?=$val;?>" />
-                    &nbsp; <?=$label;?><br/>
-                <h4 align="right">$ <?=number_format($uom->getPrice(), 2); ?></h4>
+                <?php $uom = uomForKey($uoms, $val); ?>
+                <input class="select-product-uom" type="radio" name="uom" value="<?php echo $val;?>" />
+                    &nbsp; <?php echo $label;?><br/>
+                <h4 align="right">$ <?php echo number_format($uom->getPrice(), 2); ?></h4>
             </label>
         </div>
-    <? endforeach; ?>
+    <?php endforeach; ?>
 </div>
 <div style="row" class="span12">
     <div class="span1">
-        <?= $this->formInput($form->get('quantity')->setAttribute('class', 'span1')); ?>
+        <?php echo  $this->formInput($form->get('quantity')->setAttribute('class', 'span1')); ?>
     </div>
     <div class="span2" style="align:bottom">
-        <? $submit = $form->get('submit'); ?>
-        <? $class = $submit->getAttribute('class') . ' span2'; ?>
-        <?= $this->formButton($submit->setAttribute('class', $class)); ?>
+        <?php $submit = $form->get('submit'); ?>
+        <?php $class = $submit->getAttribute('class') . ' span2'; ?>
+        <?php echo  $this->formButton($submit->setAttribute('class', $class)); ?>
     </div>
 </div>

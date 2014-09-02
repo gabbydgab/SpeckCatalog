@@ -11,9 +11,9 @@
 <!-- Numbered page links -->
 <?php foreach ($this->pagesInRange as $page): ?>
   <?php if ($page != $this->current): ?>
-    <li><a href="#"><?=$page;?></a></li>
+    <li><a href="#"><?php echo $page;?></a></li>
   <?php else: ?>
-    <li class="active"><a href="#"><?=$page;?></a></li>
+    <li class="active"><a href="#"><?php echo $page;?></a></li>
   <?php endif; ?>
 <?php endforeach; ?>
  
@@ -31,7 +31,7 @@
 
 
 
-<? /*
+<?php /*
 
 <div class="pagination">
     <ul>
@@ -39,14 +39,14 @@
         
         <li class="active"><a href="#">1</a></li>
 
-                <li><a href="#"><?=$i;?></a></li>
+                <li><a href="#"><?php echo $i;?></a></li>
 
 
             <li class="next"><a href="#">Next →</a></li>
-        <? else : ?>
+        <?php else : ?>
 
             <li class="next disabled"><a href="#">Next →</a></li>
-        <? endif; ?>
+        <?php endif; ?>
     </ul>
 </div>
  */ 

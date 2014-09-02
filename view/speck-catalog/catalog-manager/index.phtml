@@ -3,9 +3,9 @@
         <div id="products">
             <h3>Products</h3>
             <a href="/admin/catalogmanager/new-product">+ New Product</a><br/><br/>
-            <? if(isset($products)) :?>
-                <a href="/admin/catalogmanager/products"><?=count($products);?> Products</a>
-            <? endif; ?>
+            <?php if(isset($products)) :?>
+                <a href="/admin/catalogmanager/products"><?php echo count($products);?> Products</a>
+            <?php endif; ?>
         </div>
         <div class="hr"><hr/></div>
         <div id="categories">

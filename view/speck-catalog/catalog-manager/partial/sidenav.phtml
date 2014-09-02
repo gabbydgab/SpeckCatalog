@@ -1,4 +1,4 @@
-<?
+<?php
  // this is a partial used by a viewhelper
 ?>
 
@@ -128,7 +128,7 @@
 
 </style>
 
-<?
+<?php
     $buttons = array(
         array(
             'action' => 'index',
@@ -149,9 +149,9 @@
 ?>
 <div class="bs-docs-sidebar">
     <ul class="nav nav-list bs-docs-sidenav affix">
-        <? foreach($buttons as $button) : ?>
-            <? $class = $action === $button['action'] ? 'class="active" ' : ''; ?>
-            <li <?=$class;?>><a href="<?=$button['url'];?>"><i class="icon-chevron-right"></i><?=$button['title'];?></a></li>
-        <? endforeach; ?>
+        <?php foreach($buttons as $button) : ?>
+            <?php $class = $action === $button['action'] ? 'class="active" ' : ''; ?>
+            <li <?php echo $class;?>><a href="<?php echo $button['url'];?>"><i class="icon-chevron-right"></i><?php echo $button['title'];?></a></li>
+        <?php endforeach; ?>
     </ul>
 </div>

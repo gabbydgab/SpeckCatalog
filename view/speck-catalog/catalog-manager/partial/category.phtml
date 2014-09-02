@@ -1,16 +1,16 @@
-<?
+<?php
     $formHelper = $this->speckCatalogForm($category, 'category');
     $parentCategoryKeyFields = $this->speckCatalogForm($category, 'category')->getKeyFields();
 ?>
 
-<div class="boundary contrastbg half-pad" id="<?=$category->getCategoryId();?>">
+<div class="boundary contrastbg half-pad" id="<?php echo $category->getCategoryId();?>">
     <div class="entity-header">
         <div class="collapser left"><i class="icon-chevron-down initialCollapse"></i></div>
         <div class="left"><i class="icon-file"></i></div>
-        <div class="title sort-handle collapser left">&nbsp; <?=$category;?></div>
+        <div class="title sort-handle collapser left">&nbsp; <?php echo $category;?></div>
     </div>
     <div class="entity-content initialcol">
-        <?= $formHelper->renderForm(); ?>
+        <?php echo  $formHelper->renderForm(); ?>
         <div class="list-wrap">
             <div class="child-expand list-items-helper">
                 <div class="collapse-all"><i class="icon-arrow-up"></i></div>
@@ -18,10 +18,10 @@
                 <span class="smallcaps">&nbsp;categories</span><br/>
             </div>
             <div class="list-items">
-                <?=$this->speckCatalogRenderChildren('category', $category->getCategories()); ?>
+                <?php echo $this->speckCatalogRenderChildren('category', $category->getCategories()); ?>
             </div>
             <div class="row list-items-helper">
-                <?=$this->speckCatalogAdderHelper()->addNew('category', 'category', $parentCategoryKeyFields); ?>
+                <?php echo $this->speckCatalogAdderHelper()->addNew('category', 'category', $parentCategoryKeyFields); ?>
             </div>
         </div>
         <div class="list-wrap">
@@ -31,10 +31,10 @@
                 <span class="smallcaps">&nbsp;products</span><br/>
             </div>
             <div class="list-items">
-                <?=$this->speckCatalogRenderChildren('product', $category->getProducts()); ?>
+                <?php echo $this->speckCatalogRenderChildren('product', $category->getProducts()); ?>
             </div>
             <div class="row list-items-helper">
-                <?=$this->speckCatalogAdderHelper()->addNew('product', 'category', $parentCategoryKeyFields); ?>
+                <?php echo $this->speckCatalogAdderHelper()->addNew('product', 'category', $parentCategoryKeyFields); ?>
             </div>
         </div>
     </div>

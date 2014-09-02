@@ -1,27 +1,27 @@
-<? $pdir = '/catalog/catalog-manager/partial/'; ?>
-<?=$this->form()->openTag($form);?>
-    <div class="form-messages"><?= $this->formErrors; ?></div>
-    <?= $this->originalFields; ?>
-    <?=$this->formInput($form->get('product_id')); ?>
+<?php $pdir = '/catalog/catalog-manager/partial/'; ?>
+<?php echo $this->form()->openTag($form);?>
+    <div class="form-messages"><?php echo  $this->formErrors; ?></div>
+    <?php echo  $this->originalFields; ?>
+    <?php echo $this->formInput($form->get('product_id')); ?>
     <div class="row quarter-pad">
         <div class="span4">
             <div class="row">
                 <div class="span2">
-                    <?=$this->speckCatalogManagerFormRow($form->get('uom_code')->setAttribute('class', 'span2')); ?>
+                    <?php echo $this->speckCatalogManagerFormRow($form->get('uom_code')->setAttribute('class', 'span2')); ?>
                 </div>
                 <div class="span1">
-                    <?=$this->speckCatalogManagerFormRow($form->get('quantity')->setAttribute('class', 'span1')); ?>
+                    <?php echo $this->speckCatalogManagerFormRow($form->get('quantity')->setAttribute('class', 'span1')); ?>
                 </div>
             </div>
             <div class="row">
                 <div class="span1">
-                    <?=$this->speckCatalogManagerFormRow($form->get('enabled')->setAttribute('class', 'span1')); ?>
+                    <?php echo $this->speckCatalogManagerFormRow($form->get('enabled')->setAttribute('class', 'span1')); ?>
                 </div>
                 <div class="span1">
-                    <?=$this->speckCatalogManagerFormRow($form->get('retail')->setAttribute('class', 'span1')); ?>
+                    <?php echo $this->speckCatalogManagerFormRow($form->get('retail')->setAttribute('class', 'span1')); ?>
                 </div>
                 <div class="span1">
-                    <?=$this->speckCatalogManagerFormRow($form->get('price')->setAttribute('class', 'span1')); ?>
+                    <?php echo $this->speckCatalogManagerFormRow($form->get('price')->setAttribute('class', 'span1')); ?>
                 </div>
             </div>
         </div>

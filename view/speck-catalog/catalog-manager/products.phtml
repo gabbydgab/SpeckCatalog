@@ -1,4 +1,4 @@
-<?
+<?php
     $currentItem = $products->getCurrentItemCount();
     $lastItem    = ($products->getCurrentItemCount() + $products->getItemCountPerPage() < $products->getTotalItemCount())
                  ? $products->getCurrentItemCount() + $products->getItemCountPerPage()
@@ -23,34 +23,34 @@
 
 <div class="row-fluid">
     <div class="span2">
-        <a href="<?=$this->url('zfcadmin/catalogmanager/new-product'); ?>" class="btn">New Product</a>
+        <a href="<?php echo $this->url('zfcadmin/catalogmanager/new-product'); ?>" class="btn">New Product</a>
     </div>
     <div class="span2">
         <form method="GET">
-        <input type="text" name="query" placeholder="Search Products" value="<?=$this->query;?>"/>
+        <input type="text" name="query" placeholder="Search Products" value="<?php echo $this->query;?>"/>
         </form>
     </div>
 
 </div>
     <hr/>
 <div class="row-fluid">
-    <?=$paginator; ?>
+    <?php echo $paginator; ?>
         <div class="row-fluid" style="font-weight:bold">
             <div class="span1">Product Id</div><div class="span1">Type</div><div class="span4">Name</div>
         </div>
-    <? foreach($products as $product) : ?>
+    <?php foreach($products as $product) : ?>
         <div class="row-fluid">
             <div class="span1">
-                <b><?=$product->getProductId(); ?></b>
+                <b><?php echo $product->getProductId(); ?></b>
             </div>
             <div class="span1">
-                <?=($product->getProductTypeId() === 1) ? '(Shell) ' : '(Product)'; ?>
+                <?php echo ($product->getProductTypeId() === 1) ? '(Shell) ' : '(Product)'; ?>
             </div>
             <div class="span7">
-                <a href="/admin/catalogmanager/product/<?=$product->getProductId();?>"><?=$product;?></a>
+                <a href="/admin/catalogmanager/product/<?php echo $product->getProductId();?>"><?php echo $product;?></a>
             </div>
         </div>
-    <? endforeach; ?>
-    <?=$paginator; ?>
+    <?php endforeach; ?>
+    <?php echo $paginator; ?>
 
 </div>

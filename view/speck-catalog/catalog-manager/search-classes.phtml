@@ -1,14 +1,14 @@
-<? if(isset($results)) : ?>
-    <? foreach($results as $entity) : ?>
-        <? $class = explode('\\', get_class($entity)); $className = array_pop($class);?>
-        <? $method = 'get'.ucfirst($className).'Id'; ?>
-        <? $entityId = $entity->$method(); ?>
-        <? $title = ''; ?>
-        <? foreach($entity->toArray() as $key => $val){$title.="| {$key}: {$val} |";}; ?>
-        <?=$className;?> - <a href="/admin/catalogmanager/<?=strtolower($className);?>?id=<?=$entityId;?>" data-content="<?=$title;?>" rel="popover" data-placement="below">"<?=$entity;?>"</a><br/>
+<?php if(isset($results)) : ?>
+    <?php foreach($results as $entity) : ?>
+        <?php $class = explode('\\', get_class($entity)); $className = array_pop($class);?>
+        <?php $method = 'get'.ucfirst($className).'Id'; ?>
+        <?php $entityId = $entity->$method(); ?>
+        <?php $title = ''; ?>
+        <?php foreach($entity->toArray() as $key => $val){$title.="| {$key}: {$val} |";}; ?>
+        <?php echo $className;?> - <a href="/admin/catalogmanager/<?php echo strtolower($className);?>?id=<?php echo $entityId;?>" data-content="<?php echo $title;?>" rel="popover" data-placement="below">"<?php echo $entity;?>"</a><br/>
 
-    <? endforeach; ?>
+    <?php endforeach; ?>
 
-<? else: ?>
+<?php else: ?>
     No Results
-<? endif; ?>
+<?php endif; ?>

@@ -1,10 +1,10 @@
 <div style="min-width:170px; max-width: 250px; padding: 8px 0; margin-right:10px;" class="well">
     <ul class="nav nav-list">
         <li class="nav-header">Categories</li>
-      <? foreach($categories as $category) : ?>
+      <?php foreach($categories as $category) : ?>
         <li>
-            <a href="/category/<?=$category->getCategoryId(); ?>"><?=$category;?></a>
+            <a href="/category/<?php echo $category->getCategoryId(); ?>"><?php echo $category;?></a>
         </li>
-      <? endforeach; ?>
+      <?php endforeach; ?>
     </ul>
 </div>

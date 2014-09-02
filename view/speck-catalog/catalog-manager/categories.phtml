@@ -22,9 +22,9 @@
         <h4>Site Tree</h4>
         <select id="site-select" class="span4">
             <option value=''>-- Choose a Site --</option>
-            <? foreach($sites as $site) : ?>
-                <option value="<?=$site->getSiteId();?>"><?=$site->getName();?></option>
-            <? endforeach; ?>
+            <?php foreach($sites as $site) : ?>
+                <option value="<?php echo $site->getSiteId();?>"><?php echo $site->getName();?></option>
+            <?php endforeach; ?>
         </select>
         <div class="tree-cat-cats cat-sort" id="option-tree" style="max-height:600px; height:600px; overflow-y:scroll">select a site from the above dropdown</div>
     </div>

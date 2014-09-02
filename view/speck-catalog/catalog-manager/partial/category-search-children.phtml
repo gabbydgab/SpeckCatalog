@@ -1,13 +1,13 @@
-<? foreach ($children as $child) : ?>
-    <? if($type === 'product') : ?>
+<?php foreach ($children as $child) : ?>
+    <?php if($type === 'product') : ?>
         <div class="tree-product">
-            <div class="tree-product-title title"><b>:P: </b><?= $child ;?></div>
+            <div class="tree-product-title title"><b>:P: </b><?php echo  $child ;?></div>
         </div>
-    <? else : ?>
+    <?php else : ?>
         <div class="tree-cat">
-            <div class="tree-cat-title title"><b>:C: </b><?= $child ;?></div>
+            <div class="tree-cat-title title"><b>:C: </b><?php echo  $child ;?></div>
             <div class="tree-cat-cats cat-sort"></div>
             <div class="tree-cat-products product-sort"></div>
         </div>
-    <? endif; ?>
-<? endforeach; ?>
+    <?php endif; ?>
+<?php endforeach; ?>

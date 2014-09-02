@@ -2,12 +2,12 @@
     <div class="entity-header">
         <div>
             <div class="left"><i class="icon-tag"></i></div>
-            <div class="left"><a class="icon-pencil" href="/admin/catalogmanager/product/<?=$product->getProductId();?>" title="edit this"></a></div>
-            &nbsp; <?=$product; ?>
-            <?=$product->getItemNumber(); ?>
-            <? if($product->has('uoms')) : ?>
-                <? foreach($product->getUoms() as $uom) : ?>(<?=$uom;?>)<? endforeach;?>
-            <? endif; ?>
+            <div class="left"><a class="icon-pencil" href="/admin/catalogmanager/product/<?php echo $product->getProductId();?>" title="edit this"></a></div>
+            &nbsp; <?php echo $product; ?>
+            <?php echo $product->getItemNumber(); ?>
+            <?php if($product->has('uoms')) : ?>
+                <?php foreach($product->getUoms() as $uom) : ?>(<?php echo $uom;?>)<?php endforeach;?>
+            <?php endif; ?>
         </div>
     </div>
 </div>

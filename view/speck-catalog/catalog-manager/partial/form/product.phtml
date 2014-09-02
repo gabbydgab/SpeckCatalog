@@ -1,25 +1,25 @@
 <div id="greyOverlay" class="hide" style="position:absolute; top:0; left:0; z-index:99; width:100%; height:100%; background:#555555; opacity:0.7;"></div>
-<?=$this->form()->openTag($form);?>
-    <div class="form-messages"><?= $this->formErrors; ?></div>
-    <?= $this->originalFields; ?>
-    <?=$this->formInput($form->get('product_id')); ?>
+<?php echo $this->form()->openTag($form);?>
+    <div class="form-messages"><?php echo  $this->formErrors; ?></div>
+    <?php echo  $this->originalFields; ?>
+    <?php echo $this->formInput($form->get('product_id')); ?>
 
     <div class="row">
         <div class="span2">
-            <? if ($product->has('image')) : ?>
-                <img class="img hover_fullsize" src="<?=$this->speckCatalogImage()->product($product->getImage());?>"/>
-            <? endif; ?>
+            <?php if ($product->has('image')) : ?>
+                <img class="img hover_fullsize" src="<?php echo $this->speckCatalogImage()->product($product->getImage());?>"/>
+            <?php endif; ?>
         </div>
         <div class="span6">
-            <?=$this->speckCatalogManagerFormRow($form->get('name')->setAttribute('class', 'span6')); ?>
-            <?=$this->speckCatalogManagerFormRow($form->get('description')->setAttribute('class', 'span6')); ?>
+            <?php echo $this->speckCatalogManagerFormRow($form->get('name')->setAttribute('class', 'span6')); ?>
+            <?php echo $this->speckCatalogManagerFormRow($form->get('description')->setAttribute('class', 'span6')); ?>
         </div>
         <div class="span3">
-            <?=$this->speckCatalogManagerFormRow($form->get('manufacturer_id')->setAttribute('class', 'span3')); ?>
-            <?=$this->speckCatalogManagerFormRow($form->get('product_type_id')->setAttribute('class', 'span3')); ?>
-            <? if('2' == $product->getProductTypeId()) : ?>
-                <?=$this->speckCatalogManagerFormRow($form->get('item_number')->setAttribute('class', 'span3')); ?>
-            <? endif; ?>
+            <?php echo $this->speckCatalogManagerFormRow($form->get('manufacturer_id')->setAttribute('class', 'span3')); ?>
+            <?php echo $this->speckCatalogManagerFormRow($form->get('product_type_id')->setAttribute('class', 'span3')); ?>
+            <?php if('2' == $product->getProductTypeId()) : ?>
+                <?php echo $this->speckCatalogManagerFormRow($form->get('item_number')->setAttribute('class', 'span3')); ?>
+            <?php endif; ?>
         </div>
     </div>
 

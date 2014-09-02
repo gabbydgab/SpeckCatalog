@@ -5,15 +5,15 @@
     <tbody>
         <?php if (count($paginator)): ?>
             <?php foreach ($paginator as $i => $item): ?>
-                <? $class = explode('\\', get_class($item)); $className = array_pop($class);  ?>
+                <?php $class = explode('\\', get_class($item)); $className = array_pop($class);  ?>
                 <tr>
-                    <td><?=$className;?></td>
-                    <td><a href="/admin/catalogmanager/<?=strtolower($className);?>?entityId=<?=$i;?>&parent_id=<?=$parentId;?>"><?=$item;?></a></td>
+                    <td><?php echo $className;?></td>
+                    <td><a href="/admin/catalogmanager/<?php echo strtolower($className);?>?entityId=<?php echo $i;?>&parent_id=<?php echo $parentId;?>"><?php echo $item;?></a></td>
                 </tr>
             <?php endforeach; ?>
         <?php endif; ?>
     </tbody>
 </table>
-<? if(count($paginator) > 1) :?>
-    <?=$paginator->setView($this);?>
-<? endif; ?>
+<?php if(count($paginator) > 1) :?>
+    <?php echo $paginator->setView($this);?>
+<?php endif; ?>

@@ -1,7 +1,7 @@
 <div class="span1 add-element">
     <form class="add-new">
-    <? foreach ($addForm->getElements() as $element) : ?>
-        <?=$this->formInput($element); ?>
-    <? endforeach; ?>
+    <?php foreach ($addForm->getElements() as $element) : ?>
+        <?php echo $this->formInput($element); ?>
+    <?php endforeach; ?>
     </form>
 </div>

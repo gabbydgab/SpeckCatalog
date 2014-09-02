@@ -1,26 +1,26 @@
-<?=$this->form()->openTag($form);?>
+<?php echo $this->form()->openTag($form);?>
 
-    <div class="form-messages"><?= $this->formErrors; ?></div>
-    <?= $this->originalFields; ?>
-    <?=$this->formInput($form->get('option_id')); ?>
-    <?=$this->formInput($form->get('product_id')); ?>
-    <?=$this->formInput($form->get('choice_id')); ?>
+    <div class="form-messages"><?php echo  $this->formErrors; ?></div>
+    <?php echo  $this->originalFields; ?>
+    <?php echo $this->formInput($form->get('option_id')); ?>
+    <?php echo $this->formInput($form->get('product_id')); ?>
+    <?php echo $this->formInput($form->get('choice_id')); ?>
 
     <div class="row offset0">
         <div class="span3">
-            <?=$this->speckCatalogManagerFormRow($form->get('name')->setAttribute('class', 'span3')); ?>
+            <?php echo $this->speckCatalogManagerFormRow($form->get('name')->setAttribute('class', 'span3')); ?>
         </div>
         <div class="span2">
-            <?=$this->speckCatalogManagerFormRow($form->get('instruction')->setAttribute('class', 'span2')); ?>
+            <?php echo $this->speckCatalogManagerFormRow($form->get('instruction')->setAttribute('class', 'span2')); ?>
         </div>
         <div class="span2">
-            <?=$this->speckCatalogManagerFormRow($form->get('option_type_id')->setAttribute('class', 'span2')); ?>
+            <?php echo $this->speckCatalogManagerFormRow($form->get('option_type_id')->setAttribute('class', 'span2')); ?>
         </div>
         <div class="span2">
-            <?=$this->speckCatalogManagerFormRow($form->get('builder')->setAttribute('class', 'span2')); ?>
+            <?php echo $this->speckCatalogManagerFormRow($form->get('builder')->setAttribute('class', 'span2')); ?>
         </div>
         <div class="span2">
-            <?=$this->speckCatalogManagerFormRow($form->get('required')->setAttribute('class', 'span2')); ?>
+            <?php echo $this->speckCatalogManagerFormRow($form->get('required')->setAttribute('class', 'span2')); ?>
         </div>
     </div>
 </form>

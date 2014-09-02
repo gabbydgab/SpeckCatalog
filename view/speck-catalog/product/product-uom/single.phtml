@@ -1,14 +1,14 @@
 <div class="span2">
-    <?=$uomTranslated; ?>
+    <?php echo $uomTranslated; ?>
 </div>
 <div class="span1">
-    $ <?= number_format($uom->getPrice(), 2); ?>
+    $ <?php echo  number_format($uom->getPrice(), 2); ?>
 </div>
 <div class="span1">
-    <?=$this->formInput($form->get('quantity')->setAttribute('class', 'span1')); ?>
+    <?php echo $this->formInput($form->get('quantity')->setAttribute('class', 'span1')); ?>
 </div>
 <div class="span2">
-    <? $submit = $form->get('submit'); ?>
-    <? $class = $submit->getAttribute('class') . ' span2'; ?>
-    <?= $this->formButton($submit->setAttribute('class', $class)); ?>
+    <?php $submit = $form->get('submit'); ?>
+    <?php $class = $submit->getAttribute('class') . ' span2'; ?>
+    <?php echo  $this->formButton($submit->setAttribute('class', $class)); ?>
 </div>

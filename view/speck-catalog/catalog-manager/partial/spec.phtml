@@ -5,12 +5,12 @@
 ?>
 <div class="boundary contrastbg">
     <div class="entity-header">
-        <div class="title sort-handle left">&nbsp; <?=$spec;?></div>
+        <div class="title sort-handle left">&nbsp; <?php echo $spec;?></div>
         <div class="remover right">
-            <?= $this->speckCatalogAdderHelper()->removeChild('product', $parentProductKeyFields, 'spec', $keyFields); ?>
+            <?php echo  $this->speckCatalogAdderHelper()->removeChild('product', $parentProductKeyFields, 'spec', $keyFields); ?>
         </div>
     </div>
     <div class="entity-content">
-        <?= $formHelper->renderForm(); ?>
+        <?php echo  $formHelper->renderForm(); ?>
     </div>
 </div>

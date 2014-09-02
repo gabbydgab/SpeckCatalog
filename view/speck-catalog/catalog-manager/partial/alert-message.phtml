@@ -1,15 +1,15 @@
-<? if(is_array($message)) : ?>
-  <div class="alert-message <?=$message['type'];?>">
+<?php if(is_array($message)) : ?>
+  <div class="alert-message <?php echo $message['type'];?>">
     <a class="close" href="#">×</a>
     <p>
-        <? if(isset($message['status'])) : ?><strong><?=$message['status'];?></strong><? endif; ?>
-        <? if(isset($message['message'])) : ?><?=$message['message'];?><? endif; ?>
-        <? if(isset($message['url'])) : ?><a href="<?=$message['url'];?>"><?=$message['url'];?></a><? endif; ?>
+        <?php if(isset($message['status'])) : ?><strong><?php echo $message['status'];?></strong><?php endif; ?>
+        <?php if(isset($message['message'])) : ?><?php echo $message['message'];?><?php endif; ?>
+        <?php if(isset($message['url'])) : ?><a href="<?php echo $message['url'];?>"><?php echo $message['url'];?></a><?php endif; ?>
     </p>
   </div>
-<? else : ?>
+<?php else : ?>
   <div class="alert-message">
     <a class="close" href="#">×</a>
-    <p><?=$message;?></p>
+    <p><?php echo $message;?></p>
   </div>  
-<? endif; ?>
+<?php endif; ?>

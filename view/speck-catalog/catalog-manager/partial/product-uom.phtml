@@ -8,15 +8,15 @@
 <div class="existing contrastbg boundary shadow" id="">
 <div class="entity-header">
     <div class="collapser left"><i class="icon-chevron-down"></i></div>
-    <div class="title collapser left">&nbsp;<?=$productUom;?></div>
+    <div class="title collapser left">&nbsp;<?php echo $productUom;?></div>
     <div class="remover right">
-        <?= $this->speckCatalogAdderHelper()->removeChild('product', $parentProductKeyFields, 'product_uom', $productUomKeyFields); ?>
+        <?php echo  $this->speckCatalogAdderHelper()->removeChild('product', $parentProductKeyFields, 'product_uom', $productUomKeyFields); ?>
     </div>
 </div>
     <div class="entity-content">
         <div class="row">
             <div class="span5">
-                <?= $formHelper->renderForm(); ?>
+                <?php echo  $formHelper->renderForm(); ?>
             </div>
             <div class="span6">
                 <div class="list-wrap">
@@ -26,10 +26,10 @@
                         <span class="smallcaps">&nbsp;availabilities</span><br/>
                     </div>
                     <div class="list-items">
-                        <?=$this->speckCatalogRenderChildren('availability', $productUom->getAvailabilities());?>
+                        <?php echo $this->speckCatalogRenderChildren('availability', $productUom->getAvailabilities());?>
                     </div>
                     <div class="row list-items-helper">
-                        <?=$this->speckCatalogAdderHelper()->addNew('availability', 'product_uom', $productUomKeyFields); ?>
+                        <?php echo $this->speckCatalogAdderHelper()->addNew('availability', 'product_uom', $productUomKeyFields); ?>
                     </div>
                 </div>
             </div>

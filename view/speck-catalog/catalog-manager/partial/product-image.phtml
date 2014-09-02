@@ -1,13 +1,13 @@
-<? $pdir = '/speck-catalog/catalog-manager/partial/'; ?>
-<? $collapse = isset($collapse) ? 'initialCollapse' : ''; ?>
+<?php $pdir = '/speck-catalog/catalog-manager/partial/'; ?>
+<?php $collapse = isset($collapse) ? 'initialCollapse' : ''; ?>
 
 <div class="boundary contrastbg shadow" id="" >
     <div class="entity-header">
-        <div class="collapser left"><i class="icon-chevron-down <?=$collapse;?>"></i></div>
+        <div class="collapser left"><i class="icon-chevron-down <?php echo $collapse;?>"></i></div>
         <div class="left"><i class="icon-picture"></i></div>
-        <div class="title sort-handle collapser left">&nbsp; <?=$productImage;?></div>
+        <div class="title sort-handle collapser left">&nbsp; <?php echo $productImage;?></div>
     </div>
     <div class="entity-content initialcol">
-        <?=$this->partial($pdir.'form/image.phtml', array('image' => $productImage));?>
+        <?php echo $this->partial($pdir.'form/image.phtml', array('image' => $productImage));?>
     </div>
 </div>

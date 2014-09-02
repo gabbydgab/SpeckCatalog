@@ -1,70 +1,70 @@
 <?php
 $pdir = '/speck-catalog/product/';
 ?>
-<h2><?=$product->getName();?></h2>
+<h2><?php echo $product->getName();?></h2>
 
 <form id="product-for-cart" method="POST" action="/cart/add-product">
-<input type="hidden" name="product_id" value="<?=$product->getProductId();?>"/>
+<input type="hidden" name="product_id" value="<?php echo $product->getProductId();?>"/>
 
 <div class="row">
     <div class="span3 bordered-table">
-        <? if($product->has('image')): ?>
-            <? $image = $product->getImage(); ?>
-            <img src="<?=$this->speckCatalogImage()->product($image);?>" width="200" height="200" />
-        <? else: ?>
+        <?php if($product->has('image')): ?>
+            <?php $image = $product->getImage(); ?>
+            <img src="<?php echo $this->speckCatalogImage()->product($image);?>" width="200" height="200" />
+        <?php else: ?>
             asdf
             <img src="nopic.jpg" width="200" height="200"/>
-        <? endif; ?>
+        <?php endif; ?>
     </div>
     <div class="span8 well">
-        <? if($product->has('manufacturer')): ?>
-            <?=$product->getManufacturer()->getName();?>
+        <?php if($product->has('manufacturer')): ?>
+            <?php echo $product->getManufacturer()->getName();?>
             <hr/>
-        <? endif; ?>
-        <? if(!$product->has('options')) : ?>
+        <?php endif; ?>
+        <?php if(!$product->has('options')) : ?>
             <input type="text" name="quantity" value="1">
             <input type="submit" value="Add To Cart"/>
             <hr/>
-        <? endif; ?>
-        <?=$product->getDescription(); ?>
+        <?php endif; ?>
+        <?php echo $product->getDescription(); ?>
     </div>
 </div>
 
-<? if( $product->has('options') || $product->has('specs') || $product->has('documents') ): ?>
+<?php if( $product->has('options') || $product->has('specs') || $product->has('documents') ): ?>
     <div class="tabbable" class="row">
         <ul class="nav nav-tabs">
-            <? if($product->has('options')) : ?>
+            <?php if($product->has('options')) : ?>
                 <li><a href="#options" data-toggle="tab">Configure and Buy</a></li>
-            <? endif; ?>
-            <? if($product->has('specs')) : ?>
+            <?php endif; ?>
+            <?php if($product->has('specs')) : ?>
                 <li><a href="#specs" data-toggle="tab">Specs</a></li>
-            <? endif; ?>
-            <? if($product->has('documents')) : ?>
+            <?php endif; ?>
+            <?php if($product->has('documents')) : ?>
                 <li><a href="#documents" data-toggle="tab">Documents</a></li>
-            <? endif; ?>
+            <?php endif; ?>
         </ul>
         <div class="tab-content">
-            <? if($product->has('options')) : ?>
+            <?php if($product->has('options')) : ?>
                 <div class="boundary tab-pane" id="options">
-                    <? foreach($product->getOptions() as $option) : ?>
-                        <?=$this->partial($pdir . 'option.phtml', array('option' => $option, 'tree' => '[options]')); ?>
-                    <? endforeach; ?>
+                    <?php foreach($product->getOptions() as $option) : ?>
+                        <?php echo $this->partial($pdir . 'option.phtml', array('option' => $option, 'tree' => '[options]')); ?>
+                    <?php endforeach; ?>
                 </div>
-            <? endif; ?>
-            <? if($product->has('specs')) : ?>
+            <?php endif; ?>
+            <?php if($product->has('specs')) : ?>
                 <div class="boundary tab-pane" id="specs">
-                    <? foreach($product->getSpecs() as $spec) : ?>
-                        <?=$this->partial($pdir . 'spec.phtml', array('spec' => $spec)); ?>
-                    <? endforeach; ?>
+                    <?php foreach($product->getSpecs() as $spec) : ?>
+                        <?php echo $this->partial($pdir . 'spec.phtml', array('spec' => $spec)); ?>
+                    <?php endforeach; ?>
                 </div>
-            <? endif; ?>
-            <? if($product->has('documents')) : ?>
+            <?php endif; ?>
+            <?php if($product->has('documents')) : ?>
                 <div class="boundary tab-pane" id="documents">
-                    <? foreach($product->getDocuments() as $document) : ?>
-                        <?=$this->partial($pdir . 'document.phtml', array('document' => $document)); ?>
-                    <? endforeach; ?>
+                    <?php foreach($product->getDocuments() as $document) : ?>
+                        <?php echo $this->partial($pdir . 'document.phtml', array('document' => $document)); ?>
+                    <?php endforeach; ?>
                 </div>
-            <? endif; ?>
+            <?php endif; ?>
         </div><hr/>
     </div>
     <script>
@@ -73,10 +73,10 @@ $pdir = '/speck-catalog/product/';
             $('.nav-tabs').children().first().addClass('active')
         });
     </script>
-<? endif; ?>
+<?php endif; ?>
 
     <div class="span12 row">
-        <?= $this->speckCatalogUomsToCart($product->getUoms()); ?>
+        <?php echo  $this->speckCatalogUomsToCart($product->getUoms()); ?>
     </div>
 
 </form>

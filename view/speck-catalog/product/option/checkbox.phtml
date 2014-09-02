@@ -1,13 +1,13 @@
-<? $pdir = '/speck-catalog/catalog/partial/'; ?>
+<?php $pdir = '/speck-catalog/catalog/partial/'; ?>
 
-<? foreach ($option->getChoices() as $choice): ?>
+<?php foreach ($option->getChoices() as $choice): ?>
 
-<input name="product_branch[<?=$option->getOptionId();?>][<?=$choice->getChoiceId(); ?>]" value="<?=$choice->getChoiceId();?>" type="checkbox">&nbsp;<?=$choice;?>
-    <? if($choice->has('options')) : ?>
-        <? foreach($choice->getOptions() as $option) : ?>
-            <?=$this->partial($pdir . 'option.phtml', array('option' => $option)); ?>
-        <? endforeach; ?>
-    <? else: ?>
+<input name="product_branch[<?php echo $option->getOptionId();?>][<?php echo $choice->getChoiceId(); ?>]" value="<?php echo $choice->getChoiceId();?>" type="checkbox">&nbsp;<?php echo $choice;?>
+    <?php if($choice->has('options')) : ?>
+        <?php foreach($choice->getOptions() as $option) : ?>
+            <?php echo $this->partial($pdir . 'option.phtml', array('option' => $option)); ?>
+        <?php endforeach; ?>
+    <?php else: ?>
         <br/>
-    <? endif; ?>
-<? endforeach; ?>
+    <?php endif; ?>
+<?php endforeach; ?>

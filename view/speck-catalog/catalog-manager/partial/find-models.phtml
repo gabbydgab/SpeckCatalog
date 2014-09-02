@@ -1,36 +1,36 @@
 <form method="POST" class="search">
-    <? foreach ($fields as $key => $val) : ?>
-        <? if(is_array($val)) : ?>
-            <? foreach($val as $key2 => $val2) : ?>
-                <input type="hidden" name="<?=$key;?>[<?=$key2;?>]" value="<?=$val2;?>" />
-            <? endforeach;?>
-        <? else: ?>
-            <input type="hidden" name="<?=$key;?>" value="<?=$val;?>" />
-        <? endif; ?>
-    <? endforeach; ?>
+    <?php foreach ($fields as $key => $val) : ?>
+        <?php if(is_array($val)) : ?>
+            <?php foreach($val as $key2 => $val2) : ?>
+                <input type="hidden" name="<?php echo $key;?>[<?php echo $key2;?>]" value="<?php echo $val2;?>" />
+            <?php endforeach;?>
+        <?php else: ?>
+            <input type="hidden" name="<?php echo $key;?>" value="<?php echo $val;?>" />
+        <?php endif; ?>
+    <?php endforeach; ?>
     <input type="text" name="query"></input>
 </form>
 
-<? if(count($models)) : ?>
+<?php if(count($models)) : ?>
     <form method="POST" class="found">
-        <? foreach ($fields as $key => $val) : ?>
-            <? if(is_array($val)) : ?>
-                <? foreach($val as $key2 => $val2) : ?>
-                    <input type="hidden" name="<?=$key;?>[<?=$key2;?>]" value="<?=$val2;?>" />
-                <? endforeach;?>
-            <? else: ?>
-                <input type="hidden" name="<?=$key;?>" value="<?=$val;?>" />
-            <? endif; ?>
-        <? endforeach; ?>
-        <? $n=0; ?>
-        <? foreach($models as $model) : ?>
-            <? $n++; ?>
-            <? $fields = $this->speckCatalogForm($model, 'product')->getKeyFields();?>
-            <? foreach($fields as $key => $val): ?>
-                <input type="hidden" name="<?=$key;?>[<?=$n;?>]" value="<?=$val;?>" />
-            <? endforeach;?>
-            <input type="checkbox" name="check[<?=$model->getProductId();?>]" value="1">&nbsp;<?=$model;?></input><br/>
-        <? endforeach; ?>
+        <?php foreach ($fields as $key => $val) : ?>
+            <?php if(is_array($val)) : ?>
+                <?php foreach($val as $key2 => $val2) : ?>
+                    <input type="hidden" name="<?php echo $key;?>[<?php echo $key2;?>]" value="<?php echo $val2;?>" />
+                <?php endforeach;?>
+            <?php else: ?>
+                <input type="hidden" name="<?php echo $key;?>" value="<?php echo $val;?>" />
+            <?php endif; ?>
+        <?php endforeach; ?>
+        <?php $n=0; ?>
+        <?php foreach($models as $model) : ?>
+            <?php $n++; ?>
+            <?php $fields = $this->speckCatalogForm($model, 'product')->getKeyFields();?>
+            <?php foreach($fields as $key => $val): ?>
+                <input type="hidden" name="<?php echo $key;?>[<?php echo $n;?>]" value="<?php echo $val;?>" />
+            <?php endforeach;?>
+            <input type="checkbox" name="check[<?php echo $model->getProductId();?>]" value="1">&nbsp;<?php echo $model;?></input><br/>
+        <?php endforeach; ?>
         <input type="submit">
     </form>
-<? endif; ?>
+<?php endif; ?>

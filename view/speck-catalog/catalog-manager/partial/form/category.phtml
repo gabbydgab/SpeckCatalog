@@ -1,11 +1,11 @@
-<?=$this->form()->openTag($form);?>
-    <div class="form-messages"><?= $this->formErrors; ?></div>
-    <?= $this->originalFields; ?>
-    <?=$this->formInput($form->get('category_id')); ?>
+<?php echo$this->form()->openTag($form);?>
+    <div class="form-messages"><?php echo $this->formErrors; ?></div>
+    <?php echo $this->originalFields; ?>
+    <?php echo$this->formInput($form->get('category_id')); ?>
 
     <div class="row">
         <div class="span3">
-            <?=$this->speckCatalogManagerFormRow($form->get('name')); ?>
+            <?php echo$this->speckCatalogManagerFormRow($form->get('name')); ?>
         </div>
     </div>
 
